@@ -4,13 +4,14 @@ var fs = require('fs')
          , socketio = require('socket.io')
          , express = require('express')
          , path = require('path')
-         , app = express();
+         , app = express()
+         , port = process.env.PORT || 8080;
 
 //set directory path
 app.use(express.static(path.join(__dirname, 'public')));
 
 //set up server with port 8080
-var server=http.createServer(app).listen(8080, function() {
+var server=http.createServer(app).listen(port, function() {
             console.log('Listening at: http://localhost:8080');
  });
 
