@@ -1,0 +1,72 @@
+<html>
+<head>
+    <!-- Custom -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
+    
+    <!-- BootStrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/fontawesome.min.css" integrity="sha256-/sdxenK1NDowSNuphgwjv8wSosSNZB0t5koXqd7XqOI=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/solid.min.css" integrity="sha256-8DcgqUGhWHHsTLj1qcGr0OuPbKkN1RwDjIbZ6DKh/RA=" crossorigin="anonymous" />
+    <title>Tic Tac Toe</title>
+</head>
+<body>
+    <div id="loginPanel">
+        <div class="usernameForm form-group rounded">
+            <img class="w-100 mb-3" src="images/tictactoe-title.png"></img>
+            <h4 class="title mb-3">What's your username?</h4>
+            <input class="usernameInputField form-control mb-3" type="text" maxlength="14" autofocus/>
+            <div class="invalidName alert alert-danger">Invalid Username! Try Again!</div>
+            <button class="usernameEnterButton btn btn-success">Enter</button>
+            <div class="bar"></div>
+        </div>
+    </div>
+    <div id="board">
+        <div id="enermyPart">
+            Your Opponent: <text class="enermyName"></text>
+        </div>
+        <table>
+            <tr>
+                <td class="td00"></td>
+                <td class="td01"></td>
+                <td class="td02"></td>
+            </tr>
+            <tr>
+                <td class="td10"></td>
+                <td class="td11"></td>
+                <td class="td12"></td>
+            </tr>
+            <tr>
+                <td class="td20"></td>
+                <td class="td21"></td>
+                <td class="td22"></td>
+            </tr>
+        </table>
+        <button class="resetButton btn btn-lg btn-secondary">Reset</button>
+        <div id="playernumPart">
+            Number Of Players: <text class="playernum"></text>
+        </div>
+    </div>
+    <div id="msgLog">
+        <div id="msgTitleSection">
+            <i id="msgLogMenuClose" class="fas fa-bars"></i>
+            &nbsp; <span class="msgTitle">Game Info</span>
+        </div>
+        <ul id="msgPart"></ul>
+    </div>
+    <div id="msgLogClosed">
+        <i id="msgLogMenuOpen" class="fas fa-bars"></i>
+    </div>
+    <!-- jQuery -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sidebar/3.3.2/jquery.sidebar.min.js"></script>
+    <!-- Socket IO -->
+    <script src="/socket.io/socket.io.js"></script>
+    <!-- Custom -->
+    <script src="main.js"></script>
+</body>
+</html>

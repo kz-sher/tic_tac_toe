@@ -1,0 +1,325 @@
+html,body{
+    display:table;
+    width:100%;
+    height:100%;
+    margin:0;
+    box-sizing: border-box;
+}
+    
+table{
+    border:3px solid black;
+    margin:auto;
+}
+    
+td{
+    border:3px solid black;
+    width:150px;
+    height:150px;
+    text-align: center;
+}
+
+#board{
+    display:table-cell;
+    vertical-align: middle;
+    text-align: center;
+    transition: 0.7s;
+    width: calc(100vw - 400px);
+}
+
+#msgLog{
+    position: fixed;
+    height:100vh;
+    width:400px;
+    background-color: #d9d9d9;
+    float:right;
+    overflow-y: scroll;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.5);
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#msgLogClosed{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 5%;
+    right: 0;
+    background: black;
+    padding-top:5px;
+    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.5);
+}
+
+#msgTitleSection{
+    padding: 5px 10px 5px 10px;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    background-color: black;
+    display: flex;
+}
+
+#msgLogMenuClose, #msgLogMenuOpen{
+    line-height: inherit;
+    cursor: pointer;
+    font-size: 30px;
+    color: white;
+}
+
+#msgLogMenuClose:hover, #msgLogMenuOpen:hover{
+    color: lightgrey;
+}
+
+.msgTitle{
+    flex-grow: 1;
+}
+
+#msgPart{
+    margin:20px;
+    list-style-type: none;
+}
+
+#msgPart > li{
+    font-size:20px;
+    padding:10px 0px 10px 0px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+}
+    
+#loginPanel{
+    width:100%;
+    height:100%;
+    position:fixed;
+    top:0;
+    left:0;
+    background-color:white;
+    z-index:5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('images/tictactoe-desk.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#playernumPart, #enermyPart{
+    left: 15;
+    position: absolute;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#playernumPart {
+    bottom: 15;
+}
+
+#enermyPart {
+    top: 5;
+}
+
+.playernum, .enermyName{
+    font-style: italic;
+    font-size: 40px;
+}
+
+.usernameForm{
+    width: 40%;
+    padding: 3rem;
+    border: 1px solid #f7f7f7;
+    border-radius: 20px;
+    background-color: white;
+}
+
+.invalidName{
+    color: #db3236;
+    font-style: italic;
+    font-family: monospace;
+    margin: 1px;
+    display: none;
+}
+
+.resetButton{
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+    
+.marker{
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.msgLine{
+    color:white;
+    background-color: black;
+}
+
+.msgLineGame{
+    background-color: #3cba54;
+}
+
+.msgLineWarning{
+    background-color: #f4c20d;
+}
+
+.msgLinePending{
+    color:white;
+    background-color: #3b5998;
+}
+
+.bar {    
+    top:0;
+    left:0;
+    width: 1%;
+    height: 100%;
+    position: absolute;
+    border-radius: 5px;
+    z-index: -1;
+    visibility: hidden;
+    background-color: darkgray;
+}
+
+@media only screen and (max-device-width: 800px){
+    #board {
+        width: 100vw;
+    }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    #loginPanel{
+        background-image: url("images/tictactoe-mob.png");
+    }
+
+    .usernameForm{
+        width: 95%;
+    }
+
+    .title{
+        font-size: 50px !important;
+    }    
+
+    .usernameInputField{
+        height: 80px !important;
+        border: 2px solid gray !important;
+        font-size: 50px !important;
+    }
+
+    .invalidName{
+        font-size: 40px !important;
+    }
+
+    .usernameEnterButton{
+        font-size: 50px !important;
+    }
+
+    .resetButton{
+        font-size: 50px !important;
+    }
+
+    #msgLog {
+        width: 100%;
+    }
+
+    #msgLogClosed{
+        width: 13%;
+    }
+
+    #msgTitleSection{
+        padding: 20px 30px;
+    }
+
+    #msgLogMenuClose, #msgLogMenuOpen{
+        font-size: 80px;
+    }
+
+    #msgTitleSection{
+        font-size: 80px;   
+    }
+    
+    #msgPart > li{
+        font-size:65px;
+    }
+
+    #playernumPart, #enermyPart{
+        font-size: 60px;
+    }
+
+    td{
+        height: 200px;
+        width: 200px;
+    }
+
+    .playernum, .enermyName{
+        font-size: 70px;
+    }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px){
+    #loginPanel{
+        background-image: url("images/tictactoe-pad.png");
+    }
+    
+    .usernameForm{
+        width: 80%;
+    }
+
+    .title{
+        font-size: 35px !important;
+    }    
+
+    .usernameInputField{
+        height: 60px !important;
+        border: 2px solid gray !important;
+        font-size: 35px !important;
+    }
+
+    .invalidName{
+        font-size: 30px !important;
+    }
+
+    .usernameEnterButton{
+        font-size: 35px !important;
+    }
+
+    .resetButton{
+        font-size: 40px !important;
+    }
+    
+    #msgLog {
+        width: 60%;
+    }
+
+    #msgLogClosed{
+        width: 10%;
+    }
+
+    #msgTitleSection{
+        padding: 10px 20px;
+    }
+
+    #msgLogMenuClose, #msgLogMenuOpen{
+        font-size: 60px;
+    }
+
+    #msgTitleSection{
+        font-size: 50px;   
+    }
+    
+    #msgPart > li{
+        font-size:40px;
+    }
+
+    #playernumPart, #enermyPart{
+        font-size: 40px;
+    }
+
+    .playernum, .enermyName{
+        font-size: 50px;
+    }
+    
+    td{
+        height: 250px;
+        width: 250px;
+    }
+}
