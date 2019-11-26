@@ -1,1 +1,2 @@
-# tic_tac_toe
+# Tic Tac Toe
+This project is a simple game made by using NodeJS and ExpressJS along with Socket IO library.
